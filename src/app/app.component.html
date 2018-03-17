@@ -18,3 +18,10 @@
   </li>
 </ul>
 
+<ng-template #sampleTemplate let-row="row">
+  {{ row.position }}
+</ng-template>
+
+<div class="table-container">
+  <mat-table-ext [columns]="tableColumns" [dataSource]="tableData"></mat-table-ext>
+</div>

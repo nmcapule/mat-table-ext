@@ -1,5 +1,10 @@
 # MatTableExt
 
+This is a wrapper of an Angular Material Data Table extended to have the following features:
+
+  1.  Configurable columns using `TableExtColumn` array.
+  2.  Templatable cells. Specified by user component. Daymn. 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
 ## Development server

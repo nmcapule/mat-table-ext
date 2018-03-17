@@ -1,0 +1,17 @@
+<mat-table #table [dataSource]="dataSource">
+  <ng-container *ngFor="let col of columns" [matColumnDef]="col.field">
+    <mat-header-cell *matHeaderCellDef> {{col.displayName || col.field}} </mat-header-cell>
+    <mat-cell *matCellDef="let row" [ngSwitch]="col.cellTemplate">
+      <div *ngSwitchCase="undefined">
+        {{row[col.field]}} 
+      </div>
+      <div *ngSwitchDefault>
+        <ng-container *ngTemplateOutlet="col.cellTemplate;context:{row:row}">
+        </ng-container>
+      </div>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="fields"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: fields;"></mat-row>
+</mat-table>
